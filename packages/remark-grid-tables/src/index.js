@@ -8,6 +8,7 @@ const totalMainLineRegex = new RegExp(/^((\+)|(\|)).+((\|)|(\+))$/)
 const headerLineRegex = new RegExp(/^\+=[=+]+=\+$/)
 const partLineRegex = new RegExp(/\+-[-+]+-\+/)
 const separationLineRegex = new RegExp(/^\+-[-+]+-\+$/)
+const firstSpaceRegex = new RegExp(/^\s/)
 
 module.exports = plugin
 
@@ -201,6 +202,10 @@ function findAll (str, characters) {
     current += stringWidth(char)
   }
   return pos
+}
+
+function trimLine (str) {
+  return trimEnd(str.replace(firstSpaceRegex, ''))
 }
 
 function computePlainLineColumnsStartingPositions (line) {
@@ -407,7 +412,7 @@ function generateTable (tableContent, now, tokenizer) {
       for (let c = 0; c < row._cells.length; c++) {
         const cell = row._cells[c]
         const tokenizedContent = tokenizer.tokenizeBlock(
-          cell._lines.map((e) => e.trim()).join('\n'),
+          cell._lines.map((e) => trimLine(e)).join('\n'),
           now
         )
         const cellElt = {

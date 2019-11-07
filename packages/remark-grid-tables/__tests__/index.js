@@ -253,6 +253,25 @@ test('handles Cyrillic script', () => {
   expect(test4).toMatchSnapshot()
 })
 
+test('whitespace in cells', () => {
+  const {contents} = render(dedent`
+    +------------+
+    | A          |
+    +============+
+    | - Top      |
+    |   - Nested |
+    |   - Nested |
+    |   - Nested |
+    | - Top      |
+    +------------+
+    |     Code   |
+    |     Block  |
+    +------------+
+  `)
+
+  expect(contents).toMatchSnapshot()
+})
+
 test('stringify', () => {
   const fileExample = file(join(__dirname, 'grid-tables.md'))
   const {contents} = render(fileExample)

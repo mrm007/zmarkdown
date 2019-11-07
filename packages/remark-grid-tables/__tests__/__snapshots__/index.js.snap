@@ -46,7 +46,7 @@ too</p></td><td colspan=\\"2\\" rowspan=\\"1\\"><p>cells can be
 |         |</p>
 <table><tbody><tr><td colspan=\\"1\\" rowspan=\\"1\\"></td></tr></tbody></table>
 <p>Bug #107</p>
-<table><thead><tr><th colspan=\\"1\\" rowspan=\\"1\\"></th><th colspan=\\"2\\" rowspan=\\"1\\"><p>case1</p></th><th colspan=\\"2\\" rowspan=\\"1\\"><p>case2</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case3</p></th></tr><tr><th colspan=\\"1\\" rowspan=\\"1\\"></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case4</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case5</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case6</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case7</p></th><th colspan=\\"1\\" rowspan=\\"1\\"></th></tr></thead><tbody><tr><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>X</p></td></tr></tbody></table>"
+<table><thead><tr><th colspan=\\"1\\" rowspan=\\"1\\"></th><th colspan=\\"2\\" rowspan=\\"1\\"><p>case1</p></th><th colspan=\\"2\\" rowspan=\\"1\\"><p>case2</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case3</p></th></tr><tr><th colspan=\\"1\\" rowspan=\\"1\\"></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case4</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case5</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case6</p></th><th colspan=\\"1\\" rowspan=\\"1\\"><p>case7</p></th><th colspan=\\"1\\" rowspan=\\"1\\"></th></tr></thead><tbody><tr><td colspan=\\"1\\" rowspan=\\"1\\"><p> X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>   X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>  X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>  X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>  X</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>  X</p></td></tr></tbody></table>"
 `;
 
 exports[`grid-table double 1`] = `
@@ -132,3 +132,19 @@ exports[`regression: grid table in non-fenced code block 1`] = `
 `;
 
 exports[`regression: should not crash with two spaces on the next line 1`] = `"<table><tbody><tr><td colspan=\\"1\\" rowspan=\\"1\\"><p>:)</p></td><td colspan=\\"1\\" rowspan=\\"1\\"><p>:)</p></td></tr></tbody></table>"`;
+
+exports[`whitespace in cells 1`] = `
+"<table><thead><tr><th colspan=\\"1\\" rowspan=\\"1\\"><p>A</p></th></tr></thead><tbody><tr><td colspan=\\"1\\" rowspan=\\"1\\"><ul>
+<li>
+<p>Top</p>
+<ul>
+<li>Nested</li>
+<li>Nested</li>
+<li>Nested</li>
+</ul>
+</li>
+<li>Top</li>
+</ul></td></tr><tr><td colspan=\\"1\\" rowspan=\\"1\\"><pre><code>Code
+Block
+</code></pre></td></tr></tbody></table>"
+`;
